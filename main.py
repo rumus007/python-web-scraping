@@ -18,3 +18,5 @@ imglink = requests.get("https:" + imgsrc)
 f = open('flag_of_nepal.png', 'wb')
 f.write(imglink.content)
 f.close()
+
+
