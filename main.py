@@ -9,4 +9,12 @@ texts = []
 for items in res:
     texts.append(items.text)
 
-print(texts)
+# print(texts)
+
+img = soup.find(title="Flag of Nepal").contents
+imgsrc = img[0]['src']
+
+imglink = requests.get("https:" + imgsrc)
+f = open('flag_of_nepal.png', 'wb')
+f.write(imglink.content)
+f.close()
