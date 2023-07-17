@@ -1,7 +1,12 @@
 import requests
 import bs4
 
-result = requests.get("https://www.example.com")
+result = requests.get("https://en.wikipedia.org/wiki/Nepal")
 soup = bs4.BeautifulSoup(result.text, "lxml")
-title = soup.select('title')[0].getText()
-print(title)
+res = soup.select('.vector-toc-text')
+texts = []
+
+for items in res:
+    texts.append(items.text)
+
+print(texts)
